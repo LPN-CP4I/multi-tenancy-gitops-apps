@@ -1,0 +1,4 @@
+dependencies:
+  - name: mq-spring-app
+    version: 0.0.12
+    repository: https://artifactory-tools.itzroks-270007bykv-omcmf3-4b4a324f027aea19c5cbc0c3275c4656-0000.sjc03.containers.appdomain.cloud/artifactory/generic-local/ci
