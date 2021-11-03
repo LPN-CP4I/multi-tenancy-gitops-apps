@@ -1,3 +1,20 @@
 global: {}
 mq-spring-app:
   replicaCount: 1
+post-sync-job:
+  name: mq-spring-app-dev-to-stage-postsync-trigger
+  argocdhook: PostSync
+  serviceaccount: pipeline
+  container:
+    image: "registry.access.redhat.com/ubi8"
+    imagePullPolicy: "Always"
+    command: "curl"
+    args:
+      - "-X"
+      - "POST"
+      - "-H"
+      - "Content-Type: application/json"
+      - "--data"
+      - "{}"
+      - "http://mq-spring-app-post-dev-ci.itzroks-270007bykv-omcmf3-4b4a324f027aea19c5cbc0c3275c4656-0000.sjc03.containers.appdomain.cloud"
+
